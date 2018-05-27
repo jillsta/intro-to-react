@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My First Bloc App</title>
+    <script src="https://fb.me/react-0.14.3.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script type="text/babel" src="js/app.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [{text: "Display This Text"}]
+    };
+  }
+
+  render() {
+    return (
+       <div>
+          {this.state.items[0].text}
+        </div>
+    );
+  }
+}
+
+
+ReactDOM.render(
+    <div>
+      <App/>
+    </div>,
+    document.getElementById('root')
+)
+
+    </script>
+  </body>
+</html>
