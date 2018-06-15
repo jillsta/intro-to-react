@@ -36,8 +36,7 @@ class App extends Component {
     }
 
   deleteToDo(index) {
-      const todos = this.state.todos.filter(r => r.isCompleted !== index);
-      console.log(index);
+      const todos = this.state.todos.filter(r => r.isCompleted !== true);
       this.setState({todos : todos});
     }
 
@@ -57,7 +56,8 @@ class App extends Component {
         </form>
       </div>
     );
-  }
+  }           
+
   }
 
 export default App;
