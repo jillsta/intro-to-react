@@ -36,11 +36,12 @@ class App extends Component {
     }
 
   deleteToDo(index) {
-      const todos = todos.filter(todos => index[i] !== index);
+      const todos = this.state.todos.filter(r => r.isCompleted !== index);
+      console.log(index);
       this.setState({todos : todos});
     }
 
-  }
+  
 
   render() {
     return (
