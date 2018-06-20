@@ -10,6 +10,8 @@ class Album extends Component {
 			return album.slug === this.props.match.params.slug
 		});
 
+		console.log("ALBUM: ", album);
+
 		this.state = {
 			album: album
 		};
@@ -37,13 +39,13 @@ class Album extends Component {
 					<tbody>
 				{
 					this.state.album.songs.map( (song, index) =>
-						<Link to={`/albums/${albumData.songs}`} key={index}>
-							<div>
-								<tr key="1" id="song-title">{this.state.songs.title}</tr>
-								<tr key="2" id="song-duration">{this.state.songs.duration}</tr>
-								<tr key="3" id="song-audioSrc">{this.state.songs.audioSrc}</tr>
-							</div>	
-						</Link>						
+							<div key = { index } >
+								<div>
+									<tr key="1" id="song-title">{song.title}</tr>
+									<tr key="2" id="song-duration">{song.duration}</tr>
+									<tr key="3" id="song-audioSrc">{song.audioSrc}</tr>
+								</div>
+							</div>							
 						)
 				}
 					</tbody>
