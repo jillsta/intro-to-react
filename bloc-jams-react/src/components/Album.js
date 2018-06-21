@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import { Link } from 'react-router-dom';
 
 class Album extends Component {
 	constructor(props) {
@@ -9,13 +10,8 @@ class Album extends Component {
 			return album.slug === this.props.match.params.slug
 		});
 
-		const songs = albumData.find( songs => {
-			return album.songs == this.props.match.params.song 
-		});
-
 		this.state = {
 			album: album,
-			songs: songs
 		};
 	}
 	render() {
@@ -37,14 +33,15 @@ class Album extends Component {
 					</colgroup>
 					<tbody>
 				{
-					this.state.songs.map( (song, index) =>
-						<Link to={`/album/${album.songs}`} key={index}/>
+					this.state.album.songs.map((song, index) =>
+						<div key={index} >
 							<div>
-								<tr key=1 id="song-title">{this.state.songs.title}</tr>
-								<tr key=2 id="song-duration">{this.state.songs.duration}</tr>
-								<tr key=3 id="song-audioSrc">{this.state.songs.audioSrc}</tr>
+								<tr id="song-index">{index + 1}</tr>
+								<tr id="song-title">{song.title}</tr>
+								<tr id="song-duration">{song.duration}</tr>
+								<tr id="song-audioSrc">{song.audioSrc}</tr>
 							</div>	
-						</Link>						
+						</div>						
 						)
 				}
 					</tbody>
