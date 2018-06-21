@@ -10,6 +10,8 @@ class Album extends Component {
 			return album.slug === this.props.match.params.slug
 		});
 
+		console.log(album);
+
 		this.state = {
 			album: album,
 		};
