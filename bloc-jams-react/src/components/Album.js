@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 
-=======
->>>>>>> HW-5-Album
 
 class Album extends Component {
 	constructor(props) {
@@ -13,15 +10,8 @@ class Album extends Component {
 			return album.slug === this.props.match.params.slug
 		});
 
-<<<<<<< HEAD
-		console.log("ALBUM: ", album);
-
 		this.state = {
 			album: album
-=======
-		this.state = {
-			album: album,
->>>>>>> HW-5-Album
 		};
 	}
 
@@ -45,31 +35,18 @@ class Album extends Component {
 						<col id="song-duration-column" />
 					</colgroup>
 					<tbody>
-<<<<<<< HEAD
 					{
 					this.state.album.songs.map( (song, index) => 
 							<div key = { index } >
 								<div>
-									<tr id="song-index"> {index} </tr>
+									<tr id="song-index"> {index + 1} </tr>
 									<tr id="song-title">{song.title}</tr>
 									<tr id="song-duration">{song.duration}</tr>
 									<tr id="song-audioSrc">{song.audioSrc}</tr>
 								</div>
-							</div>							
-=======
-				{
-					this.state.album.songs.map((song, index) =>
-						<div key={index} >
-							<div>
-								<tr id="song-index">{index + 1}</tr>
-								<tr id="song-title">{song.title}</tr>
-								<tr id="song-duration">{song.duration}</tr>
-								<tr id="song-audioSrc">{song.audioSrc}</tr>
 							</div>	
-						</div>						
->>>>>>> HW-5-Album
-						)
-					}
+					)						
+					}		
 					</tbody>
 				</table>
 			</section>	
