@@ -16,7 +16,6 @@ class Album extends Component {
 	}
 
 
-
 	render() {
 		return (
 			<section className="album">
